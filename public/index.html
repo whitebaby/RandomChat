@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    #header {
+        /*top:5px;*/
+        background: black;
+        color: white;
+        text-align: center;
+        padding: 5px;
+        /*border: 1px solid gray;*/
+    }
+    
+    .nav {
+        line-height: 30px;
+        background-color: #eeeeee;
+        height: 450px;
+        width: 210px;
+        float: left;
+        padding: 5px;
+    }
+    
+    .sectionright {
+        margin-left: 220px;
+        height: 430px;
+        /*        background: grey;*/
+        position: relative;
+    }
+    
+    #footer {
+        background-color: black;
+        color: white;
+        clear: both;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .videoContainer {
+        position: relative;
+        width: 200px;
+        height: 150px;
+    }
+    
+    .videoContainer video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .volume {
+        position: absolute;
+        left: 15%;
+        width: 70%;
+        bottom: 1px;
+        height: 5px;
+        display: none;
+    }
+    
+    .connectionstate {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        text-align: center;
+        color: #fff
+    }
+    
+    #localScreenContainer {
+        display: none;
+    }
+    
+    #remoteVideos video {
+        height: 150px;
+    }
+    
+    #localVideo {
+        height: 150px;
+    }
+    
+    .line {
+        height: 10px;
+        color: #ccc;
+    }
+    
+    body {
+        background: url(img/bg-polar.jpg) no-repeat 50% 50%/cover padding-box border-box;
+        background-size: auto, cover
+    }
+    
+    ;
+    </style>
+    <link rel="stylesheet" href="css/style1.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/socket.io.js"></script>
+    <script src="js/latest-v2.js"></script>
+    <script src="js/main2.js"></script>
+    <title>匿名随机聊天应用-RandomChat</title>
+    <!--     作者：whitebaby
+    邮箱：632244160@qq.com
+    移动端地址：http://shouji.baidu.com/software/9797753.html 
+    版本v1.0.0 -->
+</head>
+
+<body>
+    <div id="header">
+        <h1>Random Chat</h1>
+    </div>
+    <div class="line"></div>
+    <div>
+        <div id="nav" class="nav">
+            <div class="videoContainer">
+                <div>My Camera</div>
+                <video id="localVideo" style="height: 150px;" oncontextmenu="return false;"></video>
+                <meter id="localVolume" class="volume" min="-45" max="-20" high="-25" low="-40"></meter>
+            </div>
+            </br>
+            </br>
+            <hr>
+            <div>Other's Camera</div>
+            <div id="localScreenContainer" class="videoContainer">
+            </div>
+            <div id="remotes"></div>
+        </div>
+        <div class="main">
+            <div id="section" class="sectionright">
+                <ul class="pages">
+                    <li class="chat page">
+                        <div class="chatArea">
+                            <ul class="messages"></ul>
+                        </div>
+                        <input class="inputMessage" placeholder="Type here..." />
+                    </li>
+                    <li class="login page">
+                        <div class="form">
+                            <h3 class="title">What's your nickname?</h3>
+                            <input class="usernameInput" type="text" maxlength="14" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div id="footer">
+        <a href="http://shouji.baidu.com/software/9797753.html" target="_blank">Get App </a>
+    </div>
+</body>
+<script>
+// rtcItem.getInstance("xingmiao");
+</script>
+
+</html>
